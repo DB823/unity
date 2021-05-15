@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/projectSettingsUpdater.xml
+/.idea.unity.iml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\Users\bhadh\Unity Projects\gdk-for-unity-blank-project\workers\unity\.idea\.idea.unity\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
