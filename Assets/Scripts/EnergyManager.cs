@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnergyManager : MonoBehaviour
 {
     private float gunEnergyLoss = 3;
-    public float totalEnergy = 120f;
+    public float totalEnergy = 150f;
     private float damage = 25;
     public bool dead = false;
 
