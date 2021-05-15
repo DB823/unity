@@ -1,19 +1,7 @@
-﻿using System;
-using System.Runtime.CompilerServices;
-using Improbable;
-using Improbable.Gdk.Core;
-using Improbable.Gdk.PlayerLifecycle;
-using Improbable.Gdk.QueryBasedInterest;
-using Improbable.Worker.CInterop;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class ButtonHandler : MonoBehaviour
 {
-    private void Start()
-    {
-    }
-
     // private IConnectionHandler ConnectionHandler = new SpatialOSConnectionHandler();
     public void OnStart()
     {
