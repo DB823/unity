@@ -10,17 +10,20 @@ using UnityEngine.UI;
 
 public class ButtonHandler : MonoBehaviour
 {
+    private void Start()
+    {
+    }
+
     // private IConnectionHandler ConnectionHandler = new SpatialOSConnectionHandler();
     public void OnStart()
     {
         if (true /*ConnectionHandler.IsConnected()*/)
         {
             Time.timeScale = 1f;
-            GameObject.Find("Panel").SetActive(false);
-            GameObject.Find("Button").SetActive(false);
+            GameObject.Find("Canvas").SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             PlayerController.gameIsActive = true;
-            GameObject.Find("Image").SetActive(true);
+            GameObject.Find("ReticleCanvas").SetActive(true);
         }
 
     }
