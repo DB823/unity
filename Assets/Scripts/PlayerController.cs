@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
             transform.localRotation = xQuat * yQuat;
         }
     }
-
     void FixedUpdate()
     {
 

@@ -19,6 +19,7 @@ public class GunController : MonoBehaviour
     public GameObject gun;
 
     public float speed = 100000000f;
+    private Vector3 vector= new Vector3 (90, 0, 0);
 
     void Update()
     {
@@ -34,7 +35,8 @@ public class GunController : MonoBehaviour
         Vector3 direction = transform.forward;
         RaycastHit hit = default;
         Vector3 localOffset = transform.position + (transform.up * 2);
-        GameObject instBullet = Instantiate(projectile, gun.transform.position, Quaternion.identity) as GameObject;
+        GameObject instBullet = Instantiate(projectile, gun.transform.position, cam.transform.rotation) as GameObject;
+        instBullet.transform.Rotate(direction + vector);
         Rigidbody instBulletRigidbody = instBullet.GetComponent<Rigidbody>();
         instBulletRigidbody.AddForce(cam.transform.forward * speed);
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity))
