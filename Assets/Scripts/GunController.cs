@@ -44,17 +44,16 @@ public class GunController : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity))
         {
             hit.collider.SendMessageUpwards("EnergyLoss", 2, SendMessageOptions.DontRequireReceiver);
-            Destroy(instBullet);
         }
         gameObject.GetComponent<EnergyManager>().EnergyLoss(1);
         shoot = false;
     }
 
-    private void OnTriggerExit(Collider other) // not currently working as bullets are immediately destroyed if fired at collider
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("collider"))
         {
-            Destroy(instBullet, 10f);
+            Destroy(instBullet);
         }
     }
 }
