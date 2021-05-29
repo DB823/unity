@@ -1,22 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PickupManager : MonoBehaviour
 {
+    [SerializeField] private GameObject ePanel;
     void OnTriggerStay(Collider other)
     {
         float distance = Vector3.Distance(transform.position, other.gameObject.transform.position);
         float maxDistance = 10.0f;
         bool isNear = distance <= maxDistance;
-        if (other.gameObject.CompareTag ("EnergyPickup") && isNear && Input.GetKeyDown(KeyCode.E))
+        if (isNear) ePanel.gameObject.SetActive(true);
+        else ePanel.gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("EnergyPickup") && isNear && Input.GetKeyDown(KeyCode.E))
         {
-            other.gameObject.SetActive (false);
+            other.gameObject.SetActive(false);
             AddEnergy();
             Debug.Log(gameObject.GetComponent<EnergyManager>().totalEnergy);
-            Destroy(GameObject.Find("Pickup"));
+            Destroy(other.gameObject);
+            ePanel.gameObject.SetActive(false);
         }
     }
 
-    void AddEnergy() // not correctly adding health
+    void AddEnergy()
     {
         if (!gameObject.GetComponent<EnergyManager>().dead)
         {
