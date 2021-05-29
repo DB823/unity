@@ -2,15 +2,17 @@
 
 public class PickupManager : MonoBehaviour
 {
-    void OnTriggerExit(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag ("EnergyPickup"))
+        float distance = Vector3.Distance(transform.position, other.gameObject.transform.position);
+        float maxDistance = 10.0f;
+        bool isNear = distance <= maxDistance;
+        if (other.gameObject.CompareTag ("EnergyPickup") && isNear && Input.GetKeyDown(KeyCode.E))
         {
             other.gameObject.SetActive (false);
             AddEnergy();
             Debug.Log(gameObject.GetComponent<EnergyManager>().totalEnergy);
             Destroy(GameObject.Find("Pickup"));
-
         }
     }
 

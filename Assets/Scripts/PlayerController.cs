@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     private float speed = 20f;
     private float horizontalSpeed = 20f;
     private float rotateSpeed = 2f;
-    private float gravity;
     public static bool gameIsActive;
     private float xRotation = 0f;
     private void Start()
