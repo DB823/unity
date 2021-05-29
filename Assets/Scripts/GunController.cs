@@ -10,15 +10,8 @@ public class GunController : MonoBehaviour
     [SerializeField] private Camera cam;
 
     private bool shoot;
-
-    private float energyLoss = 3;
-
-    private float damage = 10f;
-
     public GameObject projectile;
-
     public GameObject gun;
-
     public float speed = 100000000f;
     private Vector3 vector= new Vector3 (90, 0, 0);
     private GameObject instBullet;

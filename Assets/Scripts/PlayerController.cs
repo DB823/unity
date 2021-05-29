@@ -11,8 +11,6 @@ public class PlayerController : MonoBehaviour
     private float gravity;
     public static bool gameIsActive;
     private float xRotation = 0f;
-    public float mouseSensitivity = 100f;
-    public Transform playerBody;
     private void Start()
     {
         Time.timeScale = 0f;

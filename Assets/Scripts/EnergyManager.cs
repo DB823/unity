@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnergyManager : MonoBehaviour
@@ -24,7 +25,6 @@ public class EnergyManager : MonoBehaviour
                 {
                     Destroy(gameObject);
                     dead = true;
-                    Debug.Log("Destroyed!");
                 }
                 break;
 
